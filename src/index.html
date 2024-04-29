@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reminder App</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="bg-gradient-to-br(135deg, #546586, #d67aed)">
+    <main class="mx-auto px-8 py-10">
+      <section class="form-container">
+        <h1 class="text-[2rem] font-bold text-center mb-8 md:text-center lg:text-center xl:text-center">Reminder App</h1>
+        <form>
+        <div class="flex flex-col mb-4">
+          <label for="title" class="text-sm font-medium mb-2">
+            <span class="text-[1.1rem]">Title</span> (Max 12 characters)</label
+          ><input
+            type="text"
+            id="title"
+            name="title"
+            maxlength="12"
+            required
+            class="rounded-xl border border-gray-300 p-2 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600"
+          />
+          <p class="text-sm text-red-600 hidden" id="hidden-p">
+            Name cannot be empty
+          </p>
+        </div>
+        <div class="flex flex-col mb-4">
+          <label for="decsription" class="text-sm font-medium mb-2">
+            <span class="text-[1.1rem]">Description</span> (Max 32
+            characters)</label
+          ><input
+            type="text"
+            id="description"
+            name="decsription"
+            maxlength="32"
+            required
+            class="rounded-xl border border-gray-300 p-2 font-medium focus:outline-none focus:ring-2 focus:ring-blue-600"
+          />
+          <p class="text-sm text-red-600 hidden" id="hidden-description">
+            Description cannot be empty
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+          <div class="flex flex-col">
+            <label for="reminder-date" class="text-[1.1rem] font-medium mb-2"
+              >Date:</label
+            >
+            <input
+              type="date"
+              id="reminder-date"
+              name="reminder-date"
+              required
+              class="rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+            <p class="text-sm text-red-600 hidden" id="hidden-date">
+              Date cannot be empty
+            </p>
+          </div>
+          <div class="flex flex-col mb-4">
+            <label for="reminder-time" class="text-[1.1rem] font-medium mb-2"
+              >Time:</label
+            >
+            <input
+              type="time"
+              id="reminder-time"
+              name="reminder-time"
+              required
+              class="rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-600"
+            />
+            <p class="text-sm text-red-600 hidden" id="hidden-time">
+              Time cannot be empty
+            </p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          id="set-reminder-btn"
+          class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mb-6 md:h-8 md:w-48 lg:h-8 lg:w-48 xl:h-8 xl:w-48"
+        >
+          Set Reminder
+        </button>
+        </form>
+      </section>
+      <h2 class="text-center font-bold text-2xl mb-6">Reminders</h2>
+      <section
+        id="card-section" class="flex flex-col">
+      </section>
+    </main>
+    <section id="reminder-modal" class="hidden absolute inset-0 bg-gray-800 bg-opacity-50 text-center rounded-xl shadow-lg">
+      <div class="bg-white p-5 rounded-lg shadow-lg text-center">
+          <p id="reminder-modal-p" class="text-xl mb-4"></p>
+          <button id="reminder-modal-btn" class="px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-700">Close</button>
+      </div>
+    </section>
+    <!-- <script src="index.js"></script> -->
+    <script src="script.js"></script>
+  </body>
+</html>
