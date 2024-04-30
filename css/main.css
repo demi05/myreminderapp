@@ -901,10 +901,6 @@ button:hover {
 }
 
 @media (min-width: 976px) {
-  .lg\:grid {
-    display: grid;
-  }
-
   .lg\:h-8 {
     height: 2rem;
   }
@@ -913,20 +909,12 @@ button:hover {
     width: 12rem;
   }
 
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .lg\:text-center {
     text-align: center;
   }
 }
 
 @media (min-width: 1448px) {
-  .xl\:grid {
-    display: grid;
-  }
-
   .xl\:h-8 {
     height: 2rem;
   }
@@ -935,34 +923,18 @@ button:hover {
     width: 12rem;
   }
 
-  .xl\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .xl\:gap-5 {
-    gap: 1.25rem;
-  }
-
   .xl\:text-center {
     text-align: center;
   }
 }
 
 @media (min-width: 7668px) {
-  .md\:grid {
-    display: grid;
-  }
-
   .md\:h-8 {
     height: 2rem;
   }
 
   .md\:w-48 {
     width: 12rem;
-  }
-
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:text-center {
