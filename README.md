@@ -4,22 +4,6 @@ Task for Skillsforge Internship Application
 The Reminder App is a user-friendly yet effective productivity tool that enables users to track important tasks and events. This application built using HTML, CSS (with Tailwind CSS), and JavaScript has a user-friendly interface and strong function to ensure that you never miss your reminders.
 
 
-**Initial look**
-![Initial](https://github.com/demi05/myreminderapp/main/assets/images/Initial.png)
-
-
-**Reminder Card**
-![Card](https://github.com/demi05/myreminderapp/assets/98643006/b9a58ea3-b3d6-439b-b4ad-6a3e48355a5a.png)
-
-
-**Editable Card**
-![Editable](https://github.com/demi05/myreminderapp/assets/98643006/c1bdf5a0-953d-48db-a0c3-c5aa99b72367.png)
-
-
-**Reminder Modal**
-![Modal](https://github.com/demi05/myreminderapp/assets/98643006/d0a05702-b153-4c1b-b9a3-dfa8bc886548.png)
-
-
 **Features** <br />
 -Create notices with a title, description, date and time. <br />
 -View active reminders in a user-friendly manner. <br />
