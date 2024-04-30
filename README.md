@@ -5,7 +5,7 @@ The Reminder App is a user-friendly yet effective productivity tool that enables
 
 
 **Initial look**
-![Initial](https://github.com/demi05/myreminderapp/assets/98643006/27658085-ac81-4ce8-b5b3-7b7d72c7e48e.png)
+![Initial](https://github.com/demi05/myreminderapp/main/assets/images/Initial.png)
 
 
 **Reminder Card**
