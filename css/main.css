@@ -747,7 +747,7 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-/* Your other CSS styles */
+/* Other CSS styles */
 
 body {
   max-width: 80%;
@@ -794,7 +794,6 @@ button:hover {
 }
 
 #card-section div {
-  /* border: 1px solid rgb(75, 85, 99); */
   border-radius: 1.5rem;
   box-shadow: 10px 10px 20px rgb(204, 204, 204);
   -webkit-user-select: none;
@@ -813,8 +812,7 @@ button:hover {
   font-size: 1.3rem;
 }
 
-#card-section button,
-#reminder-modal button {
+#card-section button {
   font-size: 0.9rem;
   padding: 0.2em 1em;
   border-radius: 0.6rem;
@@ -855,12 +853,11 @@ button:hover {
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  /* font-size: 16px; */
 }
 
 @media (min-width: 768px) {
   body {
-    max-width: 70%;
+    max-width: 60%;
   }
 
   #card-section {

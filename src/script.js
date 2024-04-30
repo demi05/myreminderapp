@@ -1,5 +1,6 @@
 "use strict";
 
+//declaring variables
 const title = document.querySelector("#title");
 const description = document.querySelector("#description");
 const date = document.querySelector("#reminder-date");
@@ -10,11 +11,13 @@ const reminderModal = document.querySelector("#reminder-modal");
 const reminderModalP = document.querySelector("#reminder-modal-p");
 const reminderModalBtn = document.querySelector("#reminder-modal-btn");
 
+//loading the reminders on page reload
 document.addEventListener("DOMContentLoaded", function () {
   loadReminders();
   checkReminders();
 });
 
+//submitting the reminder details
 reminderBtn.addEventListener("click", () => {
   if (validateInputs()) {
     addReminder();
@@ -23,6 +26,7 @@ reminderBtn.addEventListener("click", () => {
   }
 });
 
+//save or close the reminder
 card.addEventListener("click", function (e) {
   if (e.target.classList.contains("close")) {
     e.target.parentElement.remove();
@@ -33,15 +37,7 @@ card.addEventListener("click", function (e) {
   }
 });
 
-document.addEventListener("click", (event) => {
-  if (
-    !reminderModal.contains(event.target) &&
-    !event.target.matches("#reminder-modal-btn")
-  ) {
-    reminderModal.classList.add("hidden");
-  }
-});
-
+//make sure all inpits are valid
 function validateInputs() {
   let isValid = true;
   [title, description, date, time].forEach((input) => {
@@ -58,6 +54,7 @@ function validateInputs() {
   return isValid;
 }
 
+//make the reminder editable
 function addReminder() {
   const reminderCard = document.createElement("div");
   reminderCard.innerHTML = `
@@ -72,6 +69,7 @@ function addReminder() {
   card.appendChild(reminderCard);
 }
 
+//save the changes to the edited reminder
 function saveChanges(reminderCard) {
   const title = reminderCard.querySelector(".editable-title").value;
   const description = reminderCard.querySelector(".editable-description").value;
@@ -85,14 +83,17 @@ function saveChanges(reminderCard) {
   `;
 }
 
+//save the reminders to local storage
 function saveReminders() {
   localStorage.setItem("reminders", card.innerHTML);
 }
 
+//load reminders
 function loadReminders() {
   card.innerHTML = localStorage.getItem("reminders") || "";
 }
 
+//clear the input fields once the set reminder button is clicked
 function clearInputs() {
   title.value = "";
   description.value = "";
@@ -100,22 +101,28 @@ function clearInputs() {
   time.value = "";
 }
 
+//show reminder modal once the time elapsed
 function showModal(reminderText) {
   reminderModalP.textContent = `Reminder: ${reminderText}`;
   reminderModal.classList.remove("hidden");
 }
 
+//function to hide the reminder modal
 function hideModal() {
   reminderModal.classList.add("hidden"); // Hide the modal
   console.log("okayy. click");
 }
 
+//hide  the modal once the close button is clicked
 reminderModalBtn.addEventListener("click", hideModal);
 
+//play the sound once the reminder modal shows
 function playSound() {
   const audio = new Audio("../assets/nice_alert_tone.mp3");
+  audio.play().catch((e) => console.error("Error playing sound:", e)); // Play the audio and catch any errors
 }
 
+//check if the time has elapsed and show the reminder modal
 function checkReminders() {
   const now = new Date();
   document.querySelectorAll("#card-section div").forEach((reminderCard) => {
@@ -123,7 +130,9 @@ function checkReminders() {
     const dateTimeElement = reminderCard.querySelector("p:nth-child(3)");
     if (titleElement && dateTimeElement) {
       const dateTimeStr = dateTimeElement.textContent.split(" at ");
-      const reminderDateTime = new Date(`${dateTimeStr[0]} ${dateTimeStr[1]}`);
+      const reminderDateTime = new Date(dateTimeStr[0] + "T" + dateTimeStr[1]);
+      console.log("Reminder Time:", reminderDateTime);
+      console.log("Current Time:", now);
       if (reminderDateTime <= now) {
         showModal(titleElement.textContent);
         playSound();
@@ -132,5 +141,6 @@ function checkReminders() {
       }
     }
   });
-  setTimeout(checkReminders, 60000); // Recheck every minute
+
+  setTimeout(checkReminders, 1000); // Check feedback every second
 }
